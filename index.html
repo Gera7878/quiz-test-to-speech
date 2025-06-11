@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech</title>
+  <style>
+    .container {
+      width: 400px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0.85rem;
+      gap: 20px;
+      box-shadow: 0 0 10px rgba(123, 45, 190, 0.5);
+      filter: blur(0.2px);
+      font-family: sans-serif;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .button-label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: green;
+    }
+
+    img{
+        width: 150px;
+        height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Screenshot 2025-01-28 142856.png" alt="">
+    <input type="text" id="text" placeholder="Enter text to speak..." />
+    <div class="button-label">
+      <label for="text">Speak Text</label>
+      <button onclick="speak()">Speak</button>
+    </div>
+  </div>
+
+  <script>
+    const speak = () => {
+      const text = document.getElementById("text").value;
+      const speech = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(speech);
+    };
+  </script>
+</body>
+</html>

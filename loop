@@ -1,0 +1,4 @@
+var distance=10;
+While(distance<= 50); 
+    console.log(distance + "God Bless You");
+
